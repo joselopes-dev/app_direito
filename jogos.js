@@ -1,4 +1,4 @@
- // Função para iniciar o jogo, ocultar a tela inicial e mostrar o menu de jogos
+// Função para iniciar o jogo, ocultar a tela inicial e mostrar o menu de jogos
  function startGame() {
     document.getElementById('startScreen').style.display = 'none';
     document.getElementById('gamesMenu').style.display = 'flex';
@@ -15,7 +15,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 1: Jurisprudência</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions1)" disabled>Próxima Pergunta</button>
             
         `;
         startQuiz(questions1); // Inicia o primeiro quiz
@@ -23,7 +23,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 2: Direito penal</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions2)" disabled>Próxima Pergunta</button>
             
         `;
         startQuiz(questions2); // Inicia o segundo quiz
@@ -31,7 +31,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 3: Direito eleitoral</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions3)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions3); // Inicia o terceiro quiz
@@ -41,7 +41,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 4:  Direito tributário</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions4)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions4); // Inicia o quarto quiz
@@ -51,7 +51,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 5: Direito imobiliário</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions5)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions5); // Inicia o quinto quiz
@@ -61,7 +61,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 6: Direito da família</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions6)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions6); // Inicia o sexto quiz
@@ -71,7 +71,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 7: Direito Previdenciário</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions7)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions7); // Inicia o sétimo quiz
@@ -81,7 +81,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 8: Direito do Consumidor</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions8)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions8); // Inicia o oitavo quiz
@@ -91,7 +91,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 9: Direito Trabalhista</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions9)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions9); // Inicia o nono quiz
@@ -101,7 +101,7 @@ function loadGame(gameId) {
         gameContent.innerHTML = `
             <h2>Quiz 10: Direito Digital</h2><hr>
             <div id="quiz-container"></div>
-            <button class="next-button" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+            <button class="next-button" onclick="nextQuestion(questions10)" disabled>Próxima Pergunta</button>
            
         `;
         startQuiz(questions10); // Inicia o décimo quiz
@@ -207,13 +207,13 @@ answers: [
 
 const questions2 = [
 {
-    question: 'O que caracteriza o crime de homicídio doloso?',
-answers: [
-    { text: 'A intenção de matar', correct: true },
-    { text: 'A falta de intenção de matar', correct: false },
-    { text: 'A morte causada por negligência', correct: false },
-    { text: 'A morte causada por acidente', correct: false }
-]
+    "question": "Qual é o princípio que determina que ninguém será punido por um ato que não estava previsto como crime na época em que foi praticado?",
+    answers: [
+    { "texto": "Princípio da legalidade", "correto": true },
+    { "texto": "Princípio da moralidade", "correto": false },
+    { "texto": "Princípio da proporcionalidade", "correto": false },
+    { "texto": "Princípio da equidade", "correto": false }
+  ]
 },
 {
 question: 'No Direito Penal, o que significa “prescrição”?',
@@ -295,7 +295,7 @@ answers: [
     { text: 'Crime cometido por servidor público', correct: false },
     { text: 'Crime cometido em outro país', correct: false }
 ]
-}
+},
     // Adicione mais perguntas aqui
 ];
 
@@ -1068,7 +1068,7 @@ function shuffleArray(array) {
 
 function startQuiz(questions) {
     currentQuestionIndex = 0;
-    shuffleArray(questions); // Embaralha as perguntas
+    shuffleArray(questions); // Embaralha as perguntas do quiz atual
     questions.forEach(q => shuffleArray(q.answers)); // Embaralha as respostas de cada pergunta
     userAnswers.length = 0;
     showQuestion(questions);
@@ -1094,10 +1094,10 @@ function checkAnswer(element, correct, answerText) {
     document.querySelector('.next-button').disabled = false; // Habilita botão
 }
 
-function nextQuestion() {
+function nextQuestion(questions) {
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions1.length) {
-        showQuestion(questions1);
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(questions);
     } else {
         showResults();
     }
@@ -1110,9 +1110,9 @@ function showResults() {
         `<h2>Resultados</h2>
         <p>Você acertou ${correctAnswersCount} de ${userAnswers.length} perguntas!</p>
         <ul>` +
-        userAnswers.map((answer, index) => 
-            `<li>${index + 1}: ${answer.answerText} - ${answer.correct ? 'Correto' : 'Incorreto'}</li>`
-        ).join('') +
+        userAnswers.map((answer, index) => `
+            <li>${index + 1}. ${answer.answerText} - ${answer.correct ? "Correto" : "Incorreto"}</li>
+        `).join('') +
         `</ul>
         <button class="back-button" onclick="backToMenu()">Voltar ao Menu</button>`;
 
