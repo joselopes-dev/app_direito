@@ -4,7 +4,7 @@ body {
     margin: 0;
     height: 100vh;
     padding: 20px;
-    background-image: url("/fundo_escuroo.png");
+    background-image: url("./fundo_escuroo.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
