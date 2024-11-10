@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    padding: 20px;
+    background-image: url("/fundo_escuroo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.front {
+    height: 700px;
+}
+
+#startScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+hr {
+    color: black;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+.play-button {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: black;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 100px;
+    color: white;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+#gameContent {
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.question {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+.answer {
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: white;
+}
+
+.correct {
+    background-color: green;
+}
+.incorrect {
+    background-color: red;
+}
+.next-button, .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    background-color: #4CAF50;
+    color: white;
+}
+.next-button:hover, .back-button:hover {
+    background-color: #45a049;
+}
+.back-button {
+    background-color: #007BFF;
+}
+.back-button:hover {
+    background-color: #0056b3;
+}
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+#quiz-container {
+    color: white;
+}
+
+.texto {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+@media (max-width: 600px) {
+    .game {
+        margin: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .next-button, .back-button {
+        font-size: 16px;
+    }
+    .question {
+        font-size: 18px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        padding: 0px;
+    }
+
+    #imgdireito2 {
+        width: 70px;
+        height: 70px;
+        padding: 0px;
+    }
+
+   h2 {
+    font-size: 20px;
+   } 
+
+   body {
+    padding: 5px;
+   }
+}
